@@ -20,7 +20,7 @@ version is 1.6.3.
         sudo -i
         curl -L https://raw.github.com/wharsojo/myboot2docker/master/tools/install.sh | sh
 
-  3. Reboot Boot2Docker ans see the difference:
+  3. Reboot Boot2Docker and see the difference:
 
         sudo reboot
         boot2docker ssh
