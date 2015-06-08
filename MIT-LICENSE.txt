@@ -1,6 +1,6 @@
 The MIT License
 
-Part of this work (folder: home/docker/.zprezto) are Copyright: Sorin Ionescu & contributors (MIT License)
+Part of these works (folder: home/docker/.zprezto) are Copyright: Sorin Ionescu & contributors (MIT License)
 Copyright (c) 2015 Widi Harsojo and contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

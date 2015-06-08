@@ -12,19 +12,25 @@ version is 1.6.3.
 
   1. Launch Boot2Docker & Login as docker:
 
+        boot2docker up
+        boot2docker ssh
+
   2. Clone the repository:
 
-        #### via curl
+        via curl:
+        ---------
+        sudo -i
+        curl -L https://raw.github.com/wharsojo/myboot2docker/master/tools/install.sh | sh
 
-        `sudo curl -L https://raw.github.com/wharsojo/myboot2docker/master/tools/install.sh | sh`
+        via wget:
+        ---------
+        sudo -i
+        wget https://raw.github.com/wharsojo/myboot2docker/master/tools/install.sh -O - | sh
 
-        #### via wget
-
-        `sudo wget https://raw.github.com/wharsojo/myboot2docker/master/tools/install.sh -O - | sh`
-
-  3. Reboot Boot2Docker:
+  3. Reboot Boot2Docker ans see the difference:
 
         sudo reboot
+        boot2docker ssh
 
 UnInstallation
 --------------
