@@ -1,0 +1,69 @@
+#compdef beadm
+
+local cmd expl args
+
+if (( CURRENT == 2 )); then
+  _wanted subcommands expl 'subcommand' compadd \
+      activate create destroy list mount rename unmount
+  return
+fi
+
+cmd="$words[2]"
+curcontext="${curcontext%:*}-$cmd:"
+shift words
+(( CURRENT-- ))
+
+case $cmd in
+  activate)
+    _wanted boot-environs expl 'boot environment' _be_name
+  ;;
+  create)
+    [[ $OSTYPE = solaris* ]] && args=(
+      '-a[activate new BE]'
+      '-d[description]:description'
+      '*-o[property]:zfs property'
+      '-p[create new BE in specified zfs pool]:zfs pool:_zfs_pool'
+    )
+    _arguments -A "-*" $args \
+      '-e[base BE]:BE name or snapshot:_be_name -t all' \
+      ':new BE name:'
+  ;;
+  destroy)
+    [[ $OSTYPE = solaris* ]] && args=(
+      '-f[unmount BE if necessary]'
+    )
+    _arguments -A "-*" \
+      "-F[don't prompt for verification]" \
+      ':BE or BE snapshot:_be_name'
+  ;;
+  list)
+    if [[ $OSTYPE = solaris* ]]; then
+      args=( '-d[list subordinate filesystems]' )
+    elif [[ $OSTYPE = freebsd* ]]; then
+      args=( '-D[display space usage of boot environment]' )
+    fi
+    _arguments -A "-*" \
+      '-a[list subordinate filesystems and snapshots]' \
+      '-s[list snapshots]' \
+      '-H[parseable format]' \
+      ':boot environment:_be_name'
+  ;;
+  mount)
+    _arguments -A "-*" \
+      ':BE name:_be_name' \
+      ':mountpoint:_path_files -/'
+  ;;
+  rename)
+    _arguments -A "-*" \
+      ':existing boot environment name:_be_name' \
+      ':new boot environment:'
+  ;;
+  u(n|)mount)
+    _arguments -A "-*" \
+      '-f[force unmount]' \
+      ':boot environment:_be_name'
+  ;;
+  *)
+    _message "unknown beadm subcommand: $service"
+  ;;
+esac
