@@ -17,15 +17,8 @@ version is 1.6.3.
 
   2. Clone the repository:
 
-        via curl:
-        ---------
         sudo -i
         curl -L https://raw.github.com/wharsojo/myboot2docker/master/tools/install.sh | sh
-
-        via wget:
-        ---------
-        sudo -i
-        wget https://raw.github.com/wharsojo/myboot2docker/master/tools/install.sh -O - | sh
 
   3. Reboot Boot2Docker ans see the difference:
 
