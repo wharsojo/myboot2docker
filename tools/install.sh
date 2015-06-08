@@ -27,10 +27,10 @@ if [ ! -f "$BOOTLOCAL" ]; then
 else  
   echo "" >>$BOOTLOCAL 
 fi
-echo "# don't remove env. vars, as it use for uninstaller" >>$BOOTLOCAL 
-echo "export BOOTLOCAL=$BOOTLOCAL"                         >>$BOOTLOCAL 
-echo "export MYBOOT2DOCKER=$MYBOOT2DOCKER"                 >>$BOOTLOCAL 
-echo "$MYBOOT2DOCKER/bootlocal.sh"                         >>$BOOTLOCAL 
+echo "$MYBOOT2DOCKER/bootlocal.sh"            >>$BOOTLOCAL 
+sed -i "1i export BOOTLOCAL=$BOOTLOCAL"         $MYBOOT2DOCKER/tools/uninstall.sh 
+sed -i "1i export MYBOOT2DOCKER=$MYBOOT2DOCKER" $MYBOOT2DOCKER/tools/uninstall.sh 
+sed -i "1i export MYBOOT2DOCKER=$MYBOOT2DOCKER" $MYBOOT2DOCKER/bootlocal.sh       
 chmod +x $BOOTLOCAL
 
 echo -e "$C2  ___  ___       ______             _   _____ ______           _              $C0"
@@ -43,3 +43,4 @@ echo -e "$C2           __/ |                                                    
 echo -e "$C2          |___/                                          ....is now installed!$C0"
 $MYBOOT2DOCKER/tools/version.sh
 echo -e "$C0"
+$MYBOOT2DOCKER/bootlocal.sh
