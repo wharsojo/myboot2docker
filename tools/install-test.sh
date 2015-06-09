@@ -1,9 +1,7 @@
 set -e
 
-SRC=/mnt/sda1
-if [ ! -n "$MYBOOT2DOCKER" ]; then
-  MYBOOT2DOCKER=$SRC/myboot2docker
-fi
+SRC="`df | grep  '/mnt/sd[a-z][0-9]/var/lib/docker/' | awk '{ print $6 }' | sed 's/\/var.*//'`"
+MYBOOT2DOCKER=$SRC/myboot2docker
 
 C0="\033[0m"
 C1="\033[0;33m"
@@ -18,10 +16,7 @@ if [ ! -f "$BOOTLOCAL" ]; then
 else  
   echo "" >>$BOOTLOCAL 
 fi
-echo "$MYBOOT2DOCKER/bootlocal.sh"            >>$BOOTLOCAL 
-sed -i "1i export BOOTLOCAL=$BOOTLOCAL"         $MYBOOT2DOCKER/tools/uninstall.sh 
-sed -i "1i export MYBOOT2DOCKER=$MYBOOT2DOCKER" $MYBOOT2DOCKER/tools/uninstall.sh 
-sed -i "1i export MYBOOT2DOCKER=$MYBOOT2DOCKER" $MYBOOT2DOCKER/bootlocal.sh       
+echo "$MYBOOT2DOCKER/bootlocal.sh" >>$BOOTLOCAL 
 chmod +x $BOOTLOCAL
 
 echo -e "$C2  ___  ___       ______             _   _____ ______           _              $C0"
