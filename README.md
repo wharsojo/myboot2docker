@@ -8,7 +8,7 @@ Installation
 ------------
 
 My Boot2Docker will work with any recent release of Boot2Docker, but the minimum required
-version is 1.6.3.
+version is 1.6.0.
 
   1. Launch Boot2Docker & Login as docker:
 
