@@ -20,6 +20,7 @@ hash git >/dev/null 2>&1 && env git clone --depth=1 https://github.com/wharsojo/
   exit
 }
 chown docker:staff $MYBOOT2DOCKER/home/docker -R
+chown docker:staff $MYBOOT2DOCKER/tmp/* -R
 
 BOOTLOCAL=$SRC/var/lib/boot2docker/bootlocal.sh
 if [ ! -f "$BOOTLOCAL" ]; then
