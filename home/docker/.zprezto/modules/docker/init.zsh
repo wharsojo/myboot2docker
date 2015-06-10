@@ -12,8 +12,8 @@ alias  dri="docker run -itP" # Run interactive container, e.g., $dki base /bin/b
 alias  dsr='dstop && drm'    # Stop and Remove all containers
 alias  dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'" # Get container IP
 
-dstop() { docker stop $(dpq); }   # Stop   all containers
-drm()   { docker rm   $(dpq); }   # Remove all containers
-dri()   { docker rmi  $(dpq); }   # Remove all images
-dbu()   { docker build -t=$1 .; } # Dockerfile build, e.g., $dbu tcnksm/test 
+dbu()    { docker build -t=$1 .; } # Dockerfile build, e.g., $dbu tcnksm/test 
+drm()    { docker rm   $(docker ps  -aq); }   # Remove all containers
+drmi()   { docker rmi  $(docker ps  -aq); }   # Remove all images
+dstop()  { docker stop $(docker ps  -aq); }   # Stop   all containers
 dalias(){ alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; } # Show all alias related docker
