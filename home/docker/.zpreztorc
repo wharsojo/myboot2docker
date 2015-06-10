@@ -34,7 +34,9 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'prompt' \
   'history-substring-search' \
-  'git'
+  'git' \
+  'docker' \
+  'myboot2docker'
 
 #
 # Editor
