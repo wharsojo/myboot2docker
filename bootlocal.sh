@@ -4,8 +4,9 @@ SRC="`df | grep -m 1 ' /mnt/sd[a-z][0-9]' | awk '{ print $6 }' | sed 's/\/var.*/
 MYBOOT2DOCKER=$SRC/myboot2docker
 
 rm /tmp/tce/optional -rf
-
+rm /home/docker/.zhistory
 ln -s $MYBOOT2DOCKER/tmp/tce/optional          /tmp/tce/optional
+ln -s $MYBOOT2DOCKER/home/docker/build         /home/docker/build
 ln -s $MYBOOT2DOCKER/home/docker/.zhistory     /home/docker/.zhistory
 ln -s $MYBOOT2DOCKER/home/docker/.zpreztorc    /home/docker/.zpreztorc
 ln -s $MYBOOT2DOCKER/home/docker/.zshrc        /home/docker/.zshrc
@@ -16,9 +17,10 @@ ln -s /home/docker/.zprezto/runcoms/zprofile   /home/docker/.zprofile
 ln -s /home/docker/.zprezto/runcoms/zshenv     /home/docker/.zshenv
 
 ln -s $MYBOOT2DOCKER/tools/uninstall.sh        /usr/local/bin/myboot2docker_uninstall
-ln -s $MYBOOT2DOCKER/usr/local/bin/zsh         /usr/local/bin/zsh
-ln -s $MYBOOT2DOCKER/usr/local/lib/zsh         /usr/local/lib/zsh
 ln -s $MYBOOT2DOCKER/usr/local/share/zsh       /usr/local/share/zsh
+ln -s $MYBOOT2DOCKER/usr/local/lib/zsh         /usr/local/lib/zsh
+ln -s $MYBOOT2DOCKER/usr/local/bin/zsh         /usr/local/bin/zsh
+ln -s $MYBOOT2DOCKER/usr/local/bin/tmux        /usr/local/bin/tmux
 
 NCURSES=$MYBOOT2DOCKER/tmp/tcloop/ncurses
 
@@ -42,6 +44,12 @@ ln -s $NCURSES/usr/local/lib/libtinfo.so.5.9   /usr/local/lib/libtinfo.so.5.9
 ln -s $NCURSES-common/usr/local/lib/terminfo   /usr/local/lib/terminfo
 ln -s $NCURSES-common/usr/local/share/tabset   /usr/local/share/tabset
 ln -s $NCURSES-common/usr/local/share/terminfo /usr/local/share/terminfo
+
+# MUSL=$MYBOOT2DOCKER/tmp/tcloop/musl
+# ln -s $MUSL/lib/ld-musl-x86_64.so.1 /lib/ld-musl-x86_64.so.1
+
+# LIBEVENT=$MYBOOT2DOCKER/tmp/tcloop/libevent
+# ln -s $LIBEVENT/usr/lib/libevent-2.0.so.5 /usr/lib/libevent-2.0.so.5
 
 ldconfig -X  # reload - ldd cache (after creating simlink...)
 

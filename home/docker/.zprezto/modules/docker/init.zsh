@@ -10,10 +10,12 @@ alias  dpq="docker ps  -aq"  # Get process included stop container, Only display
 alias  drd="docker run -dP"  # Run deamonized container, e.g., $dkd base /bin/echo hello
 alias  dri="docker run -itP" # Run interactive container, e.g., $dki base /bin/bash
 alias  dsr='dstop && drm'    # Stop and Remove all containers
+alias  drv="docker run -itP -v /Users:/home" # Run with /Users volume as home
 alias  dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'" # Get container IP
 
 dbu()    { docker build -t=$1 .; } # Dockerfile build, e.g., $dbu tcnksm/test 
-drm()    { docker rm   $(docker ps  -aq); }   # Remove all containers
-drmi()   { docker rmi  $(docker ps  -aq); }   # Remove all images
-dstop()  { docker stop $(docker ps  -aq); }   # Stop   all containers
-dalias(){ alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; } # Show all alias related docker
+drm()    { docker rm   $(docker ps  -aq);  }   # Remove all containers
+drmi()   { docker rmi  $(docker ps  -aq);  }   # Remove all images
+drme()   { docker rmi  $(docker images | grep "^<none>" | awk '{  print $3 }') } 
+dstop()  { docker stop $(docker ps  -aq);  }   # Stop   all containers
+dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; } # Show all alias related docker
