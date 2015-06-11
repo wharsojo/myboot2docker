@@ -47,25 +47,25 @@ ln -s $NCURSES-common/usr/local/share/terminfo /usr/local/share/terminfo
 
 LIBEVENT=$MYBOOT2DOCKER/tmp/tcloop/libevent
 
-ln -s $LIBEVENT/usr/lib/libevent-1.4.so.2           /usr/local/lib/libevent-1.4.so.2
-ln -s $LIBEVENT/usr/lib/libevent-1.4.so.2.2.0       /usr/local/lib/libevent-1.4.so.2.2.0
-ln -s $LIBEVENT/usr/lib/libevent-2.0.so.5           /usr/local/lib/libevent-2.0.so.5
-ln -s $LIBEVENT/usr/lib/libevent-2.0.so.5.0.1       /usr/local/lib/libevent-2.0.so.5.0.1
-ln -s $LIBEVENT/usr/lib/libevent.so                 /usr/local/lib/libevent.so
-ln -s $LIBEVENT/usr/lib/libevent_core-1.4.so.2      /usr/local/lib/libevent_core-1.4.so.2
-ln -s $LIBEVENT/usr/lib/libevent_core-1.4.so.2.2.0  /usr/local/lib/libevent_core-1.4.so.2.2.0
-ln -s $LIBEVENT/usr/lib/libevent_core-2.0.so.5      /usr/local/lib/libevent_core-2.0.so.5
-ln -s $LIBEVENT/usr/lib/libevent_core-2.0.so.5.0.1  /usr/local/lib/libevent_core-2.0.so.5.0.1
-ln -s $LIBEVENT/usr/lib/libevent_core.so            /usr/local/lib/libevent_core.so
-ln -s $LIBEVENT/usr/lib/libevent_extra-1.4.so.2     /usr/local/lib/libevent_extra-1.4.so.2
-ln -s $LIBEVENT/usr/lib/libevent_extra-1.4.so.2.2.0 /usr/local/lib/libevent_extra-1.4.so.2.2.0
-ln -s $LIBEVENT/usr/lib/libevent_extra-2.0.so.5     /usr/local/lib/libevent_extra-2.0.so.5
-ln -s $LIBEVENT/usr/lib/libevent_extra-2.0.so.5.0.1 /usr/local/lib/libevent_extra-2.0.so.5.0.1
-ln -s $LIBEVENT/usr/lib/libevent_extra.so           /usr/local/lib/libevent_extra.so
-ln -s $LIBEVENT/usr/lib/libevent_pthreads-2.0.so.5  /usr/local/lib/libevent_pthreads-2.0.so.5
-ln -s $LIBEVENT/usr/lib/libevent_pthreads-2.0.so.5.0.1  /usr/local/lib/libevent_pthreads-2.0.so.5.0.1
-ln -s $LIBEVENT/usr/lib/libevent_pthreads.so        /usr/local/lib/libevent_pthreads.so
-ln -s $LIBEVENT/usr/bin/event_rpcgen.py             /usr/bin/event_rpcgen.py
+ln -s $LIBEVENT/usr/local/lib/libevent-1.4.so.2           /usr/local/lib/libevent-1.4.so.2
+ln -s $LIBEVENT/usr/local/lib/libevent-1.4.so.2.2.0       /usr/local/lib/libevent-1.4.so.2.2.0
+ln -s $LIBEVENT/usr/local/lib/libevent-2.0.so.5           /usr/local/lib/libevent-2.0.so.5
+ln -s $LIBEVENT/usr/local/lib/libevent-2.0.so.5.0.1       /usr/local/lib/libevent-2.0.so.5.0.1
+ln -s $LIBEVENT/usr/local/lib/libevent.so                 /usr/local/lib/libevent.so
+ln -s $LIBEVENT/usr/local/lib/libevent_core-1.4.so.2      /usr/local/lib/libevent_core-1.4.so.2
+ln -s $LIBEVENT/usr/local/lib/libevent_core-1.4.so.2.2.0  /usr/local/lib/libevent_core-1.4.so.2.2.0
+ln -s $LIBEVENT/usr/local/lib/libevent_core-2.0.so.5      /usr/local/lib/libevent_core-2.0.so.5
+ln -s $LIBEVENT/usr/local/lib/libevent_core-2.0.so.5.0.1  /usr/local/lib/libevent_core-2.0.so.5.0.1
+ln -s $LIBEVENT/usr/local/lib/libevent_core.so            /usr/local/lib/libevent_core.so
+ln -s $LIBEVENT/usr/local/lib/libevent_extra-1.4.so.2     /usr/local/lib/libevent_extra-1.4.so.2
+ln -s $LIBEVENT/usr/local/lib/libevent_extra-1.4.so.2.2.0 /usr/local/lib/libevent_extra-1.4.so.2.2.0
+ln -s $LIBEVENT/usr/local/lib/libevent_extra-2.0.so.5     /usr/local/lib/libevent_extra-2.0.so.5
+ln -s $LIBEVENT/usr/local/lib/libevent_extra-2.0.so.5.0.1 /usr/local/lib/libevent_extra-2.0.so.5.0.1
+ln -s $LIBEVENT/usr/local/lib/libevent_extra.so           /usr/local/lib/libevent_extra.so
+ln -s $LIBEVENT/usr/local/lib/libevent_pthreads-2.0.so.5  /usr/local/lib/libevent_pthreads-2.0.so.5
+ln -s $LIBEVENT/usr/local/lib/libevent_pthreads-2.0.so.5.0.1  /usr/local/lib/libevent_pthreads-2.0.so.5.0.1
+ln -s $LIBEVENT/usr/local/lib/libevent_pthreads.so        /usr/local/lib/libevent_pthreads.so
+ln -s $LIBEVENT/usr/local/bin/event_rpcgen.py             /usr/bin/event_rpcgen.py
 
 # MUSL=$MYBOOT2DOCKER/tmp/tcloop/musl
 # ln -s $MUSL/lib/ld-musl-x86_64.so.1 /lib/ld-musl-x86_64.so.1

@@ -11,25 +11,7 @@ docker@boot2docker:~$ ldd `which tmux`
         /lib/ld-linux.so.2 (0xf77c0000)
         libpthread.so.0 => /lib/libpthread.so.0 (0xf75fd000)
 
-`ls /usr/local/lib -al | grep .*/tmp/tcloop | awk '{ print "cp /usr/local/lib/"$9" /Users/wharsojo/Projects/myboot2docker/usr/local/lib/. -dfH"}'`
+$ `ls /usr/local/lib -al | grep .*/tmp/tcloop | awk '{ print "cp /usr/local/lib/"$9" /Users/wharsojo/Projects/myboot2docker/usr/local/lib/. -dfH"}'`
 
-ls /usr/local/lib -al | grep .*/tmp/tcloop/libevent | awk '{ print $11"  "$9 }'
-docker@boot2docker:/mnt/sda1/tmp/tcloop$ ls /usr/local/lib -al | grep .*/tmp/tcloop/libevent | awk '{ print $11"  "$9 }'
+$ ls /usr/local/lib -al | grep .*/tmp/tcloop/libevent | awk '{ print $11"  "$9 }'
 /tmp/tcloop/libevent/usr/local/lib/libevent-1.4.so.2  libevent-1.4.so.2
-/tmp/tcloop/libevent/usr/local/lib/libevent-1.4.so.2.2.0  libevent-1.4.so.2.2.0
-/tmp/tcloop/libevent/usr/local/lib/libevent-2.0.so.5  libevent-2.0.so.5
-/tmp/tcloop/libevent/usr/local/lib/libevent-2.0.so.5.0.1  libevent-2.0.so.5.0.1
-/tmp/tcloop/libevent/usr/local/lib/libevent.so  libevent.so
-/tmp/tcloop/libevent/usr/local/lib/libevent_core-1.4.so.2  libevent_core-1.4.so.2
-/tmp/tcloop/libevent/usr/local/lib/libevent_core-1.4.so.2.2.0  libevent_core-1.4.so.2.2.0
-/tmp/tcloop/libevent/usr/local/lib/libevent_core-2.0.so.5  libevent_core-2.0.so.5
-/tmp/tcloop/libevent/usr/local/lib/libevent_core-2.0.so.5.0.1  libevent_core-2.0.so.5.0.1
-/tmp/tcloop/libevent/usr/local/lib/libevent_core.so  libevent_core.so
-/tmp/tcloop/libevent/usr/local/lib/libevent_extra-1.4.so.2  libevent_extra-1.4.so.2
-/tmp/tcloop/libevent/usr/local/lib/libevent_extra-1.4.so.2.2.0  libevent_extra-1.4.so.2.2.0
-/tmp/tcloop/libevent/usr/local/lib/libevent_extra-2.0.so.5  libevent_extra-2.0.so.5
-/tmp/tcloop/libevent/usr/local/lib/libevent_extra-2.0.so.5.0.1  libevent_extra-2.0.so.5.0.1
-/tmp/tcloop/libevent/usr/local/lib/libevent_extra.so  libevent_extra.so
-/tmp/tcloop/libevent/usr/local/lib/libevent_pthreads-2.0.so.5  libevent_pthreads-2.0.so.5
-/tmp/tcloop/libevent/usr/local/lib/libevent_pthreads-2.0.so.5.0.1  libevent_pthreads-2.0.so.5.0.1
-/tmp/tcloop/libevent/usr/local/lib/libevent_pthreads.so  libevent_pthreads.so
