@@ -33,10 +33,12 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'prompt' \
+  'syntax-highlighting' \
   'history-substring-search' \
   'git' \
+  'tmux' \
   'docker' \
-  'myboot2docker'
+  'myboot2docker' 
 
 #
 # Editor
@@ -67,13 +69,13 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 
 # Set the query found color.
-# zstyle ':prezto:module:history-substring-search:color' found ''
+zstyle ':prezto:module:history-substring-search:color' found ''
 
 # Set the query not found color.
-# zstyle ':prezto:module:history-substring-search:color' not-found ''
+zstyle ':prezto:module:history-substring-search:color' not-found ''
 
 # Set the search globbing flags.
-# zstyle ':prezto:module:history-substring-search' globbing-flags ''
+zstyle ':prezto:module:history-substring-search' globbing-flags ''
 
 #
 # Pacman
@@ -89,7 +91,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'steeef'
+zstyle ':prezto:module:prompt' theme 'steef2'
 
 #
 # Ruby
@@ -121,31 +123,31 @@ zstyle ':prezto:module:prompt' theme 'steeef'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'cursor' \
-#   'root'
-#
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+   'main' \
+   'brackets' \
+   'pattern' \
+   'cursor' \
+   'root'
+
 # Set syntax highlighting styles.
-# zstyle ':prezto:module:syntax-highlighting' styles \
-#   'builtin' 'bg=blue' \
-#   'command' 'bg=blue' \
-#   'function' 'bg=blue'
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'builtin'  'bg=green' \
+  'command'  'bg=cyan' \
+  'function' 'bg=blue'
 
 #
 # Terminal
 #
 
 # Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
-# zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 
 # Set the tab title format.
-# zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 
 #
 # Tmux
@@ -155,7 +157,7 @@ zstyle ':prezto:module:prompt' theme 'steeef'
 # zstyle ':prezto:module:tmux:auto-start' local 'yes'
 
 # Auto start a session when Zsh is launched in a SSH connection.
-# zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
 # zstyle ':prezto:module:tmux:iterm' integrate 'yes'
