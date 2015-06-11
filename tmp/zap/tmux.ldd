@@ -1,15 +1,16 @@
-docker@boot2docker:~$ ldd `which tmux`
-        linux-gate.so.1 (0xf77bf000)
-        libutil.so.1 => /lib/libutil.so.1 (0xf77b5000)
-        libncurses.so.5 => /usr/local/lib/libncurses.so.5 (0xf77a0000)
-        libevent-2.0.so.5 => /usr/local/lib/libevent-2.0.so.5 (0xf7771000)
-        libresolv.so.2 => /lib/libresolv.so.2 (0xf775f000)
-        libc.so.6 => /lib/libc.so.6 (0xf7641000)
-        libtinfo.so.5 => /usr/local/lib/libtinfo.so.5 (0xf761f000)
-        libdl.so.2 => /lib/libdl.so.2 (0xf761b000)
-        librt.so.1 => /lib/librt.so.1 (0xf7613000)
-        /lib/ld-linux.so.2 (0xf77c0000)
-        libpthread.so.0 => /lib/libpthread.so.0 (0xf75fd000)
+docker@boot2docker:~/tmux$ ldd `which tmux`
+  linux-gate.so.1 (0xf776c000)
+  libutil.so.1 => /lib/libutil.so.1 (0xf7762000)
+  libncurses.so.5 => /usr/local/lib/libncurses.so.5 (0xf774d000)
+  libevent-2.0.so.5 => /usr/local/lib/libevent-2.0.so.5 (0xf771e000)
+  libresolv.so.2 => /lib/libresolv.so.2 (0xf770c000)
+  libc.so.6 => /lib/libc.so.6 (0xf75ee000)
+  libtinfo.so.5 => /usr/local/lib/libtinfo.so.5 (0xf75cc000)
+  libdl.so.2 => /lib/libdl.so.2 (0xf75c8000)
+  librt.so.1 => /lib/librt.so.1 (0xf75c0000)
+  /lib/ld-linux.so.2 (0xf776d000)
+  libpthread.so.0 => /lib/libpthread.so.0 (0xf75aa000)
+
 
 $ `ls /usr/local/lib -al | grep .*/tmp/tcloop | awk '{ print "cp /usr/local/lib/"$9" /Users/wharsojo/Projects/myboot2docker/usr/local/lib/. -dfH"}'`
 
