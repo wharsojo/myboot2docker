@@ -1,5 +1,0 @@
-root@/home > ldd `which tmux`
-  /lib/ld-musl-x86_64.so.1 (0x7fb265084000)
-  libncurses.so.5 => /usr/lib/libncurses.so.5 (0x7fb264bb5000)
-  libevent-2.0.so.5 => /usr/lib/libevent-2.0.so.5 (0x7fb264976000)
-  libc.musl-x86_64.so.1 => /lib/ld-musl-x86_64.so.1 (0x7fb265084000)
