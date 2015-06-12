@@ -19,10 +19,5 @@ if ! { [ -n "$TMUX" ]; } then
   $MYBOOT2DOCKER/tools/ascii-art.sh
 fi
 
-if [ ! -f "/home/docker/.zhistory" ]; then
-  rm /home/docker/.zhistory
-  ln -s $MYBOOT2DOCKER/home/docker/.zhistory /home/docker/.zhistory
-fi
-
 echo zshrc is called...
 TERM=xterm
