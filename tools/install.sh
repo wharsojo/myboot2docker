@@ -26,9 +26,8 @@ chown docker:staff $MYBOOT2DOCKER/tmp/* -R
 # curl -L https://github.com/docker/compose/releases/download/1.3.0rc2/docker-compose-$BUILD -o $COMPOSE
 # chmod +x $COMPOSE
 
-echo -e "${C2}Build Docker Compose...${C0}"
-COMPOSE="$MYBOOT2DOCKER/home/docker/build/compose"
-docker build --rm=true -t compose $COMPOSE 
+echo -e "${C2}Pull Docker Compose...${C0}"
+docker pull wharsojo/docker-compose
 
 BOOTLOCAL=$SRC/var/lib/boot2docker/bootlocal.sh
 if [ ! -f "$BOOTLOCAL" ]; then
