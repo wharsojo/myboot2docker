@@ -22,7 +22,8 @@ chown docker:staff $MYBOOT2DOCKER/tmp/* -R
 
 echo -e "${C2}Cloning Docker Compose...${C0}"
 COMPOSE="$MYBOOT2DOCKER/usr/local/bin/docker-compose"
-curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` -o $COMPOSE
+BUILD="`uname -s`-`uname -m | sed 's/64/32/'`"
+curl -L https://github.com/docker/compose/releases/download/1.3.0rc2/docker-compose-$BUILD -o $COMPOSE
 chmod +x $COMPOSE
 
 BOOTLOCAL=$SRC/var/lib/boot2docker/bootlocal.sh
