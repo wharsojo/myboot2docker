@@ -1,8 +1,15 @@
-My Boot2Docker — Zsh (+prezto) + Tmux inside Boot2Docker
-========================================================
+My Boot2Docker — Zsh (+prezto) + Tmux inside Boot2Docker plus DockerCompose
+===========================================================================
 
 myboot2docker is my configuration for boot2docker, currently it include(s), prezto
 the configuration framework for Zsh (like oh my zsh do).
+
+Tools of the trade
+------------------
+
+  - zsh 5.0.8 + prezto (OMZ)
+  - tmux 2.1
+  - docker-compose 1.3.0 RC2
 
 Installation
 ------------
@@ -25,8 +32,8 @@ version is 1.6.0.
         sudo reboot
         boot2docker ssh
 
-UnInstallation
---------------
+UnInstall
+---------
 
   just type: sudo my_ [TAB] + [ENTER] # will return: myboot2docker_uninstall
 
