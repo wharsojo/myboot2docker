@@ -4,10 +4,8 @@ SRC="`df | grep -m 1 ' /mnt/sd[a-z][0-9]' | awk '{ print $6 }' | sed 's/\/var.*/
 MYBOOT2DOCKER=$SRC/myboot2docker
 
 rm /tmp/tce/optional -rf
-rm /home/docker/.zhistory
 ln -s $MYBOOT2DOCKER/tmp/tce/optional          /tmp/tce/optional
 ln -s $MYBOOT2DOCKER/home/docker/build         /home/docker/build
-ln -s $MYBOOT2DOCKER/home/docker/.zhistory     /home/docker/.zhistory
 ln -s $MYBOOT2DOCKER/home/docker/.zpreztorc    /home/docker/.zpreztorc
 ln -s $MYBOOT2DOCKER/home/docker/.zshrc        /home/docker/.zshrc
 ln -s $MYBOOT2DOCKER/home/docker/.zprezto      /home/docker/.zprezto

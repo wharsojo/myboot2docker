@@ -11,5 +11,18 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+SRC="`df | grep -m 1 ' /mnt/sd[a-z][0-9]' | awk '{ print $6 }' | sed 's/\/var.*//'`"
+MYBOOT2DOCKER=$SRC/myboot2docker
+
+if ! { [ -n "$TMUX" ]; } then
+  $MYBOOT2DOCKER/tools/ascii-art.sh
+fi
+
+if [ ! -f "/home/docker/.zhistory" ]; then
+  rm /home/docker/.zhistory
+  ln -s $MYBOOT2DOCKER/home/docker/.zhistory /home/docker/.zhistory
+fi
+
 echo zshrc is called...
 TERM=xterm

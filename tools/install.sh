@@ -29,14 +29,10 @@ fi
 echo "$MYBOOT2DOCKER/bootlocal.sh" >>$BOOTLOCAL 
 chmod +x $BOOTLOCAL
 
-echo -e "$C2  ___  ___       ______             _   _____ ______           _              $C0"
-echo -e "$C2  |  \/  |       | ___ \           | | / __  \|  _  \         | |             $C0"
-echo -e "$C2  | .  . |_   _  | |_/ / ___   ___ | |_\`' / /'| | | |___   ___| | _____ _ __ $C0"
-echo -e "$C2  | |\/| | | | | | ___ \/ _ \ / _ \| __| / /  | | | / _ \ / __| |/ / _ \ '__| $C0"
-echo -e "$C2  | |  | | |_| | | |_/ / (_) | (_) | |_./ /___| |/ / (_) | (__|   <  __/ |    $C0"
-echo -e "$C2  \_|  |_/\__, | \____/ \___/ \___/ \__\_____/|___/ \___/ \___|_|\_\___|_|    $C0"
-echo -e "$C2           __/ |                                                              $C0"
-echo -e "$C2          |___/                                          ....is now installed!$C0"
+$MYBOOT2DOCKER/tools/ascii-art.sh
+echo "${C2}installed...!$C0"
+
 $MYBOOT2DOCKER/tools/version.sh
 echo -e "$C0"
+
 $MYBOOT2DOCKER/bootlocal.sh
