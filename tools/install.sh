@@ -12,7 +12,7 @@ if [ -d "$MYBOOT2DOCKER" ]; then
   exit
 fi
 
-echo -e "${C3}Cloning My Boot2Docker...${C0}"
+echo -e "${C2}Cloning My Boot2Docker...${C0}"
 hash git >/dev/null 2>&1 && env git clone --depth=1 https://github.com/wharsojo/myboot2docker.git $MYBOOT2DOCKER || {
   echo -e "git not installed"
   exit
@@ -20,9 +20,10 @@ hash git >/dev/null 2>&1 && env git clone --depth=1 https://github.com/wharsojo/
 chown docker:staff $MYBOOT2DOCKER/home/docker -R
 chown docker:staff $MYBOOT2DOCKER/tmp/* -R
 
-echo -e "${C3}Cloning Docker Compose...${C0}"
-COMPOSE="-o $MYBOOT2DOCKER/usr/local/bin/docker-compose"
-curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` $COMPOSE
+echo -e "${C2}Cloning Docker Compose...${C0}"
+COMPOSE="$MYBOOT2DOCKER/usr/local/bin/docker-compose"
+curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` -o $COMPOSE
+chmod +x $COMPOSE
 
 BOOTLOCAL=$SRC/var/lib/boot2docker/bootlocal.sh
 if [ ! -f "$BOOTLOCAL" ]; then
