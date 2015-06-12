@@ -15,11 +15,12 @@ ln -s  /home/docker/.zprezto/runcoms/zlogout    /home/docker/.zlogout
 ln -s  /home/docker/.zprezto/runcoms/zprofile   /home/docker/.zprofile
 ln -s  /home/docker/.zprezto/runcoms/zshenv     /home/docker/.zshenv
 
-ln -s  $MYBOOT2DOCKER/tools/uninstall.sh        /usr/local/bin/myboot2docker_uninstall
-ln -s  $MYBOOT2DOCKER/usr/local/share/zsh       /usr/local/share/zsh
-ln -s  $MYBOOT2DOCKER/usr/local/lib/zsh         /usr/local/lib/zsh
-ln -s  $MYBOOT2DOCKER/usr/local/bin/zsh         /usr/local/bin/zsh
-ln -s  $MYBOOT2DOCKER/usr/local/bin/tmux        /usr/local/bin/tmux
+ln -s  $MYBOOT2DOCKER/usr/local/share/zsh          /usr/local/share/zsh
+ln -s  $MYBOOT2DOCKER/usr/local/lib/zsh            /usr/local/lib/zsh
+ln -s  $MYBOOT2DOCKER/usr/local/bin/zsh            /usr/local/bin/zsh
+ln -s  $MYBOOT2DOCKER/usr/local/bin/tmux           /usr/local/bin/tmux
+ln -s  $MYBOOT2DOCKER/usr/local/bin/docker-compose /usr/local/bin/docker-compose
+ln -s  $MYBOOT2DOCKER/tools/uninstall.sh           /usr/local/bin/myboot2docker_uninstall
 
 NCURSES=$MYBOOT2DOCKER/tmp/tcloop/ncurses
 
