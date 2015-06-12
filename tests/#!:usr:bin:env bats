@@ -1,0 +1,12 @@
+#!/usr/bin/env bats
+
+@test "With no cmd/args, the image return docker-compose version" {
+  result="$(docker run ${DOCKER_IMAGE_NAME})"
+  [ "$result" == "docker-compose 1.3.0rc2" ]
+  echo "-$result-"
+}
+
+ALPINE_VERSION=3.1
+@test "We use the alpine linux version ${ALPINE_VERSION}" {
+  [ $(docker run --entrypoint sh "${DOCKER_IMAGE_NAME}" -c "grep VERSION_ID /etc/os-release | grep -e \"=${ALPINE_VERSION}.\" | wc -l") -eq 1 ]
+}
