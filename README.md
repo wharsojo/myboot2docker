@@ -1,5 +1,5 @@
-My Boot2Docker — An Awesome Zsh inside Boot2Docker
-==================================================
+My Boot2Docker — Zsh (+prezto) + Tmux inside Boot2Docker
+========================================================
 
 myboot2docker is my configuration for boot2docker, currently it include(s), prezto
 the configuration framework for Zsh (like oh my zsh do).

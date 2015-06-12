@@ -30,7 +30,7 @@ echo "$MYBOOT2DOCKER/bootlocal.sh" >>$BOOTLOCAL
 chmod +x $BOOTLOCAL
 
 $MYBOOT2DOCKER/tools/ascii-art.sh
-echo -e "${C2}installed...!$C0"
+echo -e "${C2}installed....!$C0"
 
 $MYBOOT2DOCKER/tools/version.sh
 echo -e "$C0"
