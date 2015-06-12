@@ -3,7 +3,6 @@ echo boot local...
 SRC="`df | grep -m 1 ' /mnt/sd[a-z][0-9]' | awk '{ print $6 }' | sed 's/\/var.*//'`"
 MYBOOT2DOCKER=$SRC/myboot2docker
 
-rm /tmp/tce/optional -rf
 ln -s  $MYBOOT2DOCKER/tmp/tce/optional          /tmp/tce/optional
 ln -s  $MYBOOT2DOCKER/home/docker/build         /home/docker/build
 ln -s  $MYBOOT2DOCKER/home/docker/.zpreztorc    /home/docker/.zpreztorc
@@ -16,10 +15,9 @@ ln -s  /home/docker/.zprezto/runcoms/zprofile   /home/docker/.zprofile
 ln -s  /home/docker/.zprezto/runcoms/zshenv     /home/docker/.zshenv
 
 ln -s  $MYBOOT2DOCKER/usr/local/share/zsh          /usr/local/share/zsh
+ln -s  $MYBOOT2DOCKER/usr/local/bin/tmux           /usr/local/bin/tmux
 ln -s  $MYBOOT2DOCKER/usr/local/lib/zsh            /usr/local/lib/zsh
 ln -s  $MYBOOT2DOCKER/usr/local/bin/zsh            /usr/local/bin/zsh
-ln -s  $MYBOOT2DOCKER/usr/local/bin/tmux           /usr/local/bin/tmux
-ln -s  $MYBOOT2DOCKER/usr/local/bin/docker-compose /usr/local/bin/docker-compose
 ln -s  $MYBOOT2DOCKER/tools/uninstall.sh           /usr/local/bin/myboot2docker_uninstall
 
 NCURSES=$MYBOOT2DOCKER/tmp/tcloop/ncurses
