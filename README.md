@@ -19,8 +19,7 @@ Tools of the trade
 Installation
 ------------
 
-My Boot2Docker will work with any recent release of Boot2Docker, but the minimum required
-version is 1.6.0.
+My Boot2Docker will work with any recent release of Boot2Docker version: v1.6.x.
 
   1. Launch Boot2Docker & Login as docker:
 
@@ -40,7 +39,7 @@ version is 1.6.0.
 UnInstall
 ---------
 
-  just type: sudo my_ [TAB] + [ENTER] # will return: myboot2docker_uninstall
+  type: myboot2docker_uninstall
 
 License: MIT
 ------------
