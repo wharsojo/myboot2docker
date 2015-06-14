@@ -17,6 +17,11 @@ MYBOOT2DOCKER=$SRC/myboot2docker
 
 if ! { [ -n "$TMUX" ]; } then
   $MYBOOT2DOCKER/tools/ascii-art.sh
+else
+  bindkey "^N"   history-substring-search-down
+  bindkey "^P"   history-substring-search-up
+  bindkey "^[OA" history-substring-search-up
+  bindkey "^[OB" history-substring-search-down
 fi
 
 echo zshrc is called...
