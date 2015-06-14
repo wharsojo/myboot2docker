@@ -13,6 +13,7 @@ Tools of the trade
 
 
 ![alt text](https://raw.githubusercontent.com/wharsojo/assets/master/myboot2docker/myboot2docker.gif "My Boot2Docker Demo")
+<a href="https://raw.githubusercontent.com/wharsojo/assets/master/myboot2docker/myboot2docker.gif" target="_blank">Demo in Mac</a> & 
 <a href="https://raw.githubusercontent.com/wharsojo/assets/master/myboot2docker/myboot2docker-win.gif" target="_blank">Demo in PuTTY</a>
 
 Installation
