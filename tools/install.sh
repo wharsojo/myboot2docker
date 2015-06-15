@@ -13,7 +13,7 @@ if [ -d "$MYBOOT2DOCKER" ]; then
 fi
 
 echo -e "${C2}Cloning My Boot2Docker...${C0}"
-hash git >/dev/null 2>&1 && env git clone --depth=1 https://github.com/wharsojo/myboot2docker.git $MYBOOT2DOCKER || {
+hash git >/dev/null 2>&1 && env git clone --depth=1 -b master https://github.com/wharsojo/myboot2docker.git $MYBOOT2DOCKER || {
   echo -e "git not installed"
   exit
 }
