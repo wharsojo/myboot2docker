@@ -1,4 +1,0 @@
-REPOSITORY           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-tatsushid/tinycore   6.3-x86_64          f6231f836ea8        9 days ago          6.868 MB
-tatsushid/tinycore   6.3-x86             439d6f48f6fb        9 days ago          5.415 MB
-1science/alpine      latest              ad4a4896a5b3        10 days ago         11 MB
