@@ -50,7 +50,7 @@ ln -s  $MYBOOT2DOCKER/usr/local/lib/libevent_pthreads.la             /usr/local/
 # MUSL=$MYBOOT2DOCKER/tmp/tcloop/musl
 # ln -s $MUSL/lib/ld-musl-x86_64.so.1 /lib/ld-musl-x86_64.so.1
 
-ldconfig -X  # reload - ldd cache (after creating simlink...)
+ldconfig -X > /dev/null # reload - ldd cache (after creating simlink...)
 
 which zsh | tee -a /etc/shells > /dev/null
 sed -i "/$(cat /etc/sysconfig/tcuser)/    s#:[^:]\+\$#:$(which zsh)#" /etc/passwd
