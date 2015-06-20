@@ -31,13 +31,13 @@ My Boot2Docker will work with any recent release of Boot2Docker version: v1.6.x.
 
      * for boot2docker version 1.6.x: 
 
-        sudo -i
-        curl -L https://raw.github.com/wharsojo/myboot2docker/master/tools/install-b2d-v1.6.x.sh | sh
+     sudo -i
+     curl -L https://raw.github.com/wharsojo/myboot2docker/master/tools/install-b2d-v1.6.x.sh | sh
 
      * for boot2docker version 1.7.x:
 
-        sudo -i
-        curl -L https://raw.github.com/wharsojo/myboot2docker/master/tools/install.sh | sh
+     sudo -i
+     curl -L https://raw.github.com/wharsojo/myboot2docker/master/tools/install.sh | sh
 
   3. Reboot Boot2Docker and see the difference:
 
