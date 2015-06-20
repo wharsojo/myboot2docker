@@ -46,7 +46,7 @@ ln -s  $M2L/libevent_pthreads-2.0.so.5.1.10 $LIB/libevent_pthreads-2.0.so.5.1.10
 ln -s  $LIB/libevent_pthreads-2.0.so.5.1.10 $LIB/libevent_pthreads-2.0.so.5
 ln -s  $LIB/libevent_pthreads-2.0.so.5.1.10 $LIB/libevent_pthreads.so
 
-ldconfig -X > /dev/null # reload - ldd cache (after creating simlink...)
+ldconfig -X 2&>1 >/dev/null # reload - ldd cache (after creating simlink...)
 
 which zsh | tee -a /etc/shells > /dev/null
 sed -i "/$(cat /etc/sysconfig/tcuser)/    s#:[^:]\+\$#:$(which zsh)#" /etc/passwd
