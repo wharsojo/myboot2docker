@@ -32,7 +32,7 @@ My Boot2Docker will work with any recent release of Boot2Docker version: v1.6.x 
         for boot2docker version 1.6.x: 
         ------------------------------
         sudo -i
-        curl -L https://raw.github.com/wharsojo/myboot2docker/master/tools/b2d-v1.6.x.sh | sh
+        curl -L https://raw.github.com/wharsojo/myboot2docker/b2d-v1.6.x/tools/install.sh | sh
 
         for boot2docker version 1.7.x:
         --------------------------------
