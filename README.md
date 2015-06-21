@@ -9,7 +9,7 @@ Tools of the trade
 
   - zsh 5.0.8 + prezto (OMZ)
   - tmux 2.1
-  - docker-compose 1.3.0rc2
+  - docker-compose 1.3.0
 
 
 ![alt text](https://raw.githubusercontent.com/wharsojo/assets/master/myboot2docker/myboot2docker.gif "My Boot2Docker Demo")
