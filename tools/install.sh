@@ -20,15 +20,6 @@ hash git >/dev/null 2>&1 && env git clone --depth=1 -b master https://github.com
 chown docker:staff $MYBOOT2DOCKER/home/docker -R
 chown docker:staff $MYBOOT2DOCKER/tmp/* -R
 
-# echo -e "${C2}Cloning Docker Compose...${C0}"
-# COMPOSE="$MYBOOT2DOCKER/usr/local/bin/docker-compose"
-# BUILD="`uname -s`-`uname -m | sed 's/64/32/'`"
-# curl -L https://github.com/docker/compose/releases/download/1.3.0rc2/docker-compose-$BUILD -o $COMPOSE
-# chmod +x $COMPOSE
-
-echo -e "${C2}Pull Docker Compose...${C0}"
-docker pull wharsojo/docker-compose
-
 BOOTLOCAL=$SRC/var/lib/boot2docker/bootlocal.sh
 if [ ! -f "$BOOTLOCAL" ]; then
   echo "" >$BOOTLOCAL 

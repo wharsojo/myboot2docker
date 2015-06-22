@@ -29,6 +29,5 @@ echo zshrc is called...
 VL1=\"\$(pwd)\":/app
 VL2=/var/run/docker.sock:/var/run/docker.sock
 PRJ=COMPOSE_PROJECT_NAME=\$(basename \"\$(pwd)\")
-alias docker-compose="docker run -v $VL1 -v $VL2 -e $PRJ -ti --rm wharsojo/docker-compose"
 
 TERM=xterm
