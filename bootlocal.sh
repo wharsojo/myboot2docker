@@ -81,8 +81,8 @@ PYT=/tmp/tcloop/python
 ln -s   $PYT$LIB/python2.7                  $LIB/python2.7
 ln -s   $PYT$LIB/libpython2.7.so            $LIB/libpython2.7.so
 ln -s   $PYT$LIB/libpython2.7.so.1.0        $LIB/libpython2.7.so.1.0
-ln -s   $PYT$SHR/python/files/files.tar.gz  $SHR/python/files/files.tar.gz
-ln -s   $PYT$INC/python2.7/pyconfig.h       $INC/python2.7/pyconfig.h
+ln -s   $PYT$INC/python2.7                  $INC/python2.7
+ln -s   $PYT$SHR/python                     $SHR/python
 ln -s   $PYT$TCE/python                     $TCE/python
 
 ln -s   $GDB$BIN/gdbmtool                   $BIN/gdbmtool
