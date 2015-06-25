@@ -1,3 +1,0 @@
-#!/bin/sh
-
-tar xzf /usr/local/share/python/files/files.tar.gz -C /

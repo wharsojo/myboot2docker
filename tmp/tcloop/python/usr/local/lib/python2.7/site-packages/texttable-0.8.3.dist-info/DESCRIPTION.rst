@@ -1,3 +1,0 @@
-texttable is a module to generate a formatted text table, using ASCII
-characters.
-

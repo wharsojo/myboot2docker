@@ -1,8 +1,0 @@
-# command to create symlink:
-
-$ ls /usr/local/bin/* -al | grep python | awk '{ printf "ln -s %-55s %-10s\n",$11,$9 }'
-$ ls /usr/**/* -al   | grep /tmp/tcloop | awk '{ printf "ln -s %-55s %-10s\n",$11,$9 }' 
-
-# result:
-# ln -s /tmp/tcloop/python/usr/local/bin/docker-compose         /usr/local/bin/docker-compose
-# ...
