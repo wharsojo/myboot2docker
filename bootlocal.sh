@@ -9,7 +9,6 @@ rm /tmp/tcloop -rf
 rm /tmp/tce/optional -rf
 ln -s  $MYBOOT2DOCKER/tmp/tcloop       /tmp/tcloop
 ln -s  $MYBOOT2DOCKER/tmp/tce/optional /tmp/tce/optional
-ln -s  /Users/wharsojo/Projects/docker-project $DOC/project
 
 ln -s  $M2D/build                      $DOC/build
 ln -s  $M2D/.zpreztorc                 $DOC/.zpreztorc
@@ -27,13 +26,14 @@ SHR=/usr/local/share
 M2L=$MYBOOT2DOCKER$LIB
 M2B=$MYBOOT2DOCKER$BIN
 M2S=$MYBOOT2DOCKER$SHR
+M2T=$MYBOOT2DOCKER/tools
 
 ln -s  $M2S/zsh  $SHR/zsh
 ln -s  $M2L/zsh  $LIB/zsh
 ln -s  $M2B/zsh  $BIN/zsh
 ln -s  $M2B/tmux $BIN/tmux
-ln -s  $M2B/tmux $BIN/docker-compose
-ln -s  $MYBOOT2DOCKER/tools/uninstall.sh    $BIN/myboot2docker_uninstall
+ln -s  $M2B/docker-compose $BIN/docker-compose
+ln -s  $M2T/uninstall.sh   $BIN/myboot2docker_uninstall
 
 ln -s  $M2L/libevent-2.0.so.5.1.10          $LIB/libevent-2.0.so.5.1.10
 ln -s  $LIB/libevent-2.0.so.5.1.10          $LIB/libevent-2.0.so.5
