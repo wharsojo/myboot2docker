@@ -9,7 +9,6 @@ rm /tmp/tcloop -rf
 rm /tmp/tce/optional -rf
 ln -s  $MYBOOT2DOCKER/tmp/tcloop       /tmp/tcloop
 ln -s  $MYBOOT2DOCKER/tmp/tce/optional /tmp/tce/optional
-ln -s  /Users/wharsojo/Projects/docker-project ~/project
 
 ln -s  $M2D/build                      $DOC/build
 ln -s  $M2D/.zpreztorc                 $DOC/.zpreztorc
