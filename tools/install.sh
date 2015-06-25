@@ -8,13 +8,12 @@ C1="\033[0;33m"
 C2="\033[0;32m"
 C3="\033[0;34m"
 if [ -d "$MYBOOT2DOCKER" ]; then
-  echo -e "${C2}cmd: $@ ${C0}"
   echo -e "${C1}You already have My Boot2Docker installed. \nYou'll need to remove $MYBOOT2DOCKER if you want to install${C0}"
   exit
 fi
 
 echo -e "${C2}Cloning My Boot2Docker...${C0}"
-hash git >/dev/null 2>&1 && env git clone --depth=1 -b master https://github.com/wharsojo/myboot2docker.git $MYBOOT2DOCKER || {
+hash git >/dev/null 2>&1 && env git clone --depth=1 -b v0.2.3 https://github.com/wharsojo/myboot2docker.git $MYBOOT2DOCKER || {
   echo -e "git not installed"
   exit
 }
