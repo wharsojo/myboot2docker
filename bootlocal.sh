@@ -7,6 +7,9 @@ M2D=$MYBOOT2DOCKER$DOC
 
 rm /tmp/tcloop -rf
 rm /tmp/tce/optional -rf
+cp -f /etc/hosts $MYBOOT2DOCKER/etc/hosts
+rm -f /etc/hosts 
+ln -s  $MYBOOT2DOCKER/etc/hosts        /etc/hosts
 ln -s  $MYBOOT2DOCKER/tmp/tcloop       /tmp/tcloop
 ln -s  $MYBOOT2DOCKER/tmp/tce/optional /tmp/tce/optional
 
