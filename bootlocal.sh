@@ -7,7 +7,12 @@ M2D=$MYBOOT2DOCKER$DOC
 
 rm /tmp/tcloop -rf
 rm /tmp/tce/optional -rf
-cp -f /etc/hosts $MYBOOT2DOCKER/etc/hosts
+HOSTS=$MYBOOT2DOCKER/etc/hosts
+if [ ! -f "$HOSTS" ]; then
+  mkdir -p $MYBOOT2DOCKER/etc
+  cp -f /etc/hosts $HOSTS
+  echo "127.0.0.1  localhub" >> $HOSTS
+fi
 rm -f /etc/hosts 
 ln -s  $MYBOOT2DOCKER/etc/hosts        /etc/hosts
 ln -s  $MYBOOT2DOCKER/tmp/tcloop       /tmp/tcloop
