@@ -74,6 +74,30 @@ Shortcuts
 | drme() | ...                            | Remove all empty name images     |
 | dstop()| docker stop $(docker ps  -aq); | Stop all container               | 
 
+Docker Registry
+---------------
+
+Run registry server with data save on: /mnt/sda1/registry:
+
+        $ boot2docker ssh
+        $ sudo mkdir /mnt/sda1/registry
+        $ sudo chown docker:staff /mnt/sda1/registry
+        $ docker run -p 5000:5000 -v /mnt/sda1/registry:/tmp/registry -e GUNICORN_OPTS='["--preload"]'
+ --restart=always --name=registry registry
+
+Save container "hello-world" to private registry:
+
+        $ docker pull hello-world
+        $ docker tag  hello-world localhub:5000/hello-world
+        $ docker push localhub:5000/hello-world
+
+List all container on private registry:
+
+        $ curl -X GET http://localhub:5000/v1/search
+
+Delete container library from private registry:
+
+        $ curl -X DELETE http://localhub:5000/v1/repositories/library/hello-world        
 
 License: MIT
 ------------
