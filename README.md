@@ -62,7 +62,7 @@ Shortcuts
 |  dpq  | docker ps -aq              | Get all numric IDs container          |
 |  drd  | docker run -dP             | Run demonized                         | 
 |  dri  | docker run -itP            | Run interactive                       |
-|  dsr  | dstop && drm               | Stop all running container and rm it  | 
+|  dsr  | dkill && drm               | Kill all running container and rm it  | 
 |  drv  | docker run -itP -v         | Run and need parameter for volume     |
 |  dip  | docker inspect --format .. | Get container IP                      |
 
@@ -72,6 +72,7 @@ Shortcuts
 | drm()  | docker rm $(docker ps  -aq);   | Remove all containers            |
 | drmi() | docker rmi $(docker ps  -aq);  | Remove all images                |
 | drme() | ...                            | Remove all empty name images     |
+| dkill()| docker kill $(docker ps  -aq); | Kill all container               | 
 | dstop()| docker stop $(docker ps  -aq); | Stop all container               | 
 
 Docker Registry
