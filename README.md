@@ -20,7 +20,7 @@ Tools of the trade
 Installation
 ------------
 
-My Boot2Docker will work with any recent release of Boot2Docker version:  v1.7.x & v1.6.x
+My Boot2Docker will work with any recent release of Boot2Docker version:  v1.6.x, v1.7.x & v1.8.x 
 
   1. Launch Boot2Docker & Login as docker:
 
@@ -29,8 +29,8 @@ My Boot2Docker will work with any recent release of Boot2Docker version:  v1.7.x
 
   2. Clone the repository:
 
-        for boot2docker version 1.7.x:
-        --------------------------------
+        for boot2docker version 1.7.x & 1.8.x:
+        --------------------------------------
         sudo -i
         curl -L https://raw.github.com/wharsojo/myboot2docker/master/tools/install.sh | sh
 
