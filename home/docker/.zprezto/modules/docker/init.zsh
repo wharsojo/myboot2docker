@@ -5,6 +5,7 @@
 alias   di="docker images"   # Get images
 alias   dl="docker ps -lq"   # Get latest container ID
 alias   dp="docker ps"       # Get container process
+alias   dx="docker exec -it" # Run specific app on running Container
 alias  dpa="docker ps  -a"   # Get process included stop container
 alias  dpq="docker ps  -aq"  # Get process included stop container, Only display numeric IDs
 alias  drd="docker run -dP"  # Run deamonized container, e.g., $dkd base /bin/echo hello
@@ -13,7 +14,7 @@ alias  dsr='dstop && drm'    # Stop and Remove all containers
 alias  drv="docker run -itP -v /Users:/home" # Run with /Users volume as home
 alias  dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'" # Get container IP
 
-dbu()    { docker build -t=$1 .; } # Dockerfile build, e.g., $dbu tcnksm/test 
+dbl()    { docker build -t=$1 .; } # Dockerfile build, e.g., $dbu tcnksm/test 
 drm()    { docker rm   $(docker ps  -aq);  }   # Remove all containers
 drmi()   { docker rmi  $(docker ps  -aq);  }   # Remove all images
 drme()   { docker rmi  $(docker images | grep "^<none>" | awk '{  print $3 }') } 

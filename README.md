@@ -49,5 +49,31 @@ UnInstall
 
   type: myboot2docker_uninstall
 
+Shortcuts
+---------
+
+| alias | Commands                   |  Note                                 |
+|:-----:|----------------------------|---------------------------------------|
+|  di   | docker images              | Get images                            |
+|  dl   | docker ps -lq              | Get latest container ID               |
+|  dp   | docker ps                  | Get container process                 |
+|  dx   | docker exec -it            | Run specific app on running container |
+|  dpa  | docker ps -a               | Get all container process             | 
+|  dpq  | docker ps -aq              | Get all numric IDs container          |
+|  drd  | docker run -dP             | Run demonized                         | 
+|  dri  | docker run -itP            | Run interactive                       |
+|  dsr  | dstop && drm               | Stop all running container and rm it  | 
+|  drv  | docker run -itP -v         | Run and need parameter for volume     |
+|  dip  | docker inspect --format .. | Get container IP                      |
+
+| func   | Commands                       |  Note                            |
+|:------:|--------------------------------|----------------------------------|
+| dbl()  | docker build -t=$1 .;          | Dockerfile build command         |
+| drm()  | docker rm $(docker ps  -aq);   | Remove all containers            |
+| drmi() | docker rmi $(docker ps  -aq);  | Remove all images                |
+| drme() | ...                            | Remove all empty name images     |
+| dstop()| docker stop $(docker ps  -aq); | Stop all container               | 
+
+
 License: MIT
 ------------
