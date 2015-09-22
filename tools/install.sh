@@ -29,6 +29,11 @@ fi
 echo "$MYBOOT2DOCKER/bootlocal.sh" >>$BOOTLOCAL 
 chmod +x $BOOTLOCAL
 
+PROFILE=$MYBOOT2DOCKER/profile
+if [ ! -f "$PROFILE" ]; then
+  cp $PROFILE /var/lib/boot2docker/. > /dev/null
+fi
+
 $MYBOOT2DOCKER/tools/ascii-art.sh
 $MYBOOT2DOCKER/tools/version.sh
 $MYBOOT2DOCKER/bootlocal.sh
