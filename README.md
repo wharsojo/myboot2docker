@@ -111,7 +111,7 @@ Make your private registry accessible from other computer
 
 Create port tunelling from boot2docker to the host of your computer
 
-        $ BoxManage controlvm "boot2docker-vm" natpf1 "registry,tcp,,5000,,5000";
+        $ VBoxManage controlvm "boot2docker-vm" natpf1 "registry,tcp,,5000,,5000";
 
 assuming that other computer accessing your private registry is using boot2docker and myboot2docker, check your ip-address (ex: 192.168.1.2) & update "/etc/hosts" file boot2docker of other computer to reflect to your ip-address.
 
