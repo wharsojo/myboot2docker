@@ -91,11 +91,11 @@ Save container "hello-world" to private registry:
         $ docker tag  hello-world localhub:5000/hello-world
         $ docker push localhub:5000/hello-world
 
-pull "hello-world" from private registry
+pull "hello-world" from private registry:
 
         $ docker pull localhub:5000/hello-world
 
-run container
+run container:
 
         $ docker run localhub:5000/hello-world
 
@@ -107,16 +107,17 @@ Delete container library from private registry:
 
         $ curl -X DELETE http://localhub:5000/v1/repositories/library/hello-world        
 
-Make your private registry accessible to other computer
--------------------------------------------------------
+Make private registry accessible to other computer
+--------------------------------------------------
 
-Create port tunelling from boot2docker to the host of your computer
+Create port mapping from boot2docker to the host:
 
         $ VBoxManage controlvm "boot2docker-vm" natpf1 "registry,tcp,,5000,,5000";
 
-assuming that other computer accessing your private registry is using boot2docker and myboot2docker, check your ip-address (ex: 192.168.1.2) & update "/etc/hosts" file boot2docker of other computer to reflect to your ip-address.
+check your ip-address (ex: 192.168.1.2).
 
-        other computer
+Assume that other computer are using boot2docker and myboot2docker, update "/etc/hosts" file inside boot2docker VM to reflect your ip-address:
+
         $ boot2docker ssh
         $ sudo vi /etc/hosts
 
@@ -124,7 +125,7 @@ assuming that other computer accessing your private registry is using boot2docke
 
         $ sudo reboot
 
-after reboot the boot2docker in other computer, you can try accessing you private-registry, like mentioned in section "Docker Registry"
+From other computer, please try to access the private-registry, like mentioned in section "Docker Registry"
 
 
 License: MIT
