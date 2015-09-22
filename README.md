@@ -107,8 +107,8 @@ Delete container library from private registry:
 
         $ curl -X DELETE http://localhub:5000/v1/repositories/library/hello-world        
 
-Make your private registry accessible from other computer
----------------------------------------------------------
+Make your private registry accessible from to computer
+------------------------------------------------------
 
 Create port tunelling from boot2docker to the host of your computer
 
