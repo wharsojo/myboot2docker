@@ -82,8 +82,7 @@ Run registry server with data save on: /mnt/sda1/registry:
         $ boot2docker ssh
         $ sudo mkdir /mnt/sda1/registry
         $ sudo chown docker:staff /mnt/sda1/registry
-        $ docker run -p 5000:5000 -v /mnt/sda1/registry:/tmp/registry -e GUNICORN_OPTS='["--preload"]'
- --restart=always --name=registry registry
+        $ docker run -p 5000:5000 -v /mnt/sda1/registry:/tmp/registry -e GUNICORN_OPTS='["--preload"]' --restart=always --name=registry registry
 
 Save container "hello-world" to private registry:
 
