@@ -1,0 +1,22 @@
+#!/bin/sh
+
+echo Change port of running container
+if [ ! -z "$1" -a "$1" != " " ] && [ ! -z "$2" -a "$2" != " " ]; then
+    IPAddress=$(docker inspect $1 | grep \"IPAddress\") 
+    if [ "$?" = "0" ]; then
+        IPAddress=$(echo $IPAddress | grep -o '[0-9.]*') 
+        IPAddress=$(echo $IPAddress | xargs) 
+     
+        hostport=$( echo $2 | sed -r 's/:/ /g' | awk '{ print $(NF-1) }')
+        guestport=$(echo $2 | sed -r 's/:/ /g' | awk '{ print $(NF-0) }')
+        echo 
+        p-rm $hostport
+        echo sudo iptables -t nat -A DOCKER -p tcp --dport $hostport -j DNAT --to-destination $IPAddress:$guestport
+             sudo iptables -t nat -A DOCKER -p tcp --dport $hostport -j DNAT --to-destination $IPAddress:$guestport
+    fi
+else 
+    echo Command: p-map \<container_name\> \<port_host:port_guest\>
+fi
+echo
+sudo iptables -t nat -L -n | grep DNAT
+ 

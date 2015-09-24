@@ -1,0 +1,23 @@
+#!/bin/sh
+
+IPOpt='-t nat -D DOCKER -p tcp --dport'
+
+RGX="DNAT.+dpt:${1}"
+#echo "regex: $RGX"
+IPTables=$(sudo iptables -t nat -L -n | grep -E "$RGX" | sed 's/ /_/g')
+
+for line in $IPTables
+do
+    line0=$(echo $line  | sed 's/_/ /g')
+    line1=$(echo $line0 | awk '{ print $(NF-1) $(NF-0) }')
+    line2=$(echo $line1 | sed 's/dpt://')
+    line3=$(echo $line2 | sed 's/to:/ -j DNAT --to-destination /')
+
+    CMD="iptables $IPOpt $line3"
+    echo "sudo $CMD"
+    sudo $CMD
+done
+# DNAT_______tcp__--__0.0.0.0/0____________0.0.0.0/0____________tcp_dpt:28080_to:172.17.0.1:8080
+# $ sudo iptables -t nat -D DOCKER -p tcp --dport 8001  -j DNAT --to-destination 172.17.0.2:8000
+#                 -t nat -D DOCKER -p tcp --dport 15210 -j DNAT --to-destination 172.17.0.1:1521
+#   sudo iptables -t nat -D DOCKER -p tcp --dport 11521 -j DNAT --to-destination 172.17.0.2:1521

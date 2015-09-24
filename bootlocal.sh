@@ -36,10 +36,12 @@ M2B=$MYBOOT2DOCKER$BIN
 M2S=$MYBOOT2DOCKER$SHR
 M2T=$MYBOOT2DOCKER/tools
 
-ln -s  $M2S/zsh  $SHR/zsh
-ln -s  $M2L/zsh  $LIB/zsh
-ln -s  $M2B/zsh  $BIN/zsh
-ln -s  $M2B/tmux $BIN/tmux
+ln -s  $M2S/zsh   $SHR/zsh
+ln -s  $M2L/zsh   $LIB/zsh
+ln -s  $M2B/zsh   $BIN/zsh
+ln -s  $M2B/tmux  $BIN/tmux
+ln -s  $M2B/p-rm  $BIN/p-rm
+ln -s  $M2B/p-map $BIN/p-map
 ln -s  $M2B/docker-compose $BIN/docker-compose
 ln -s  $M2T/uninstall.sh   $BIN/myboot2docker_uninstall
 

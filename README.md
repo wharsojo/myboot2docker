@@ -128,6 +128,48 @@ Assume that other computer are using boot2docker and myboot2docker, update "/etc
 
 From other computer, please try to access the private-registry, like mentioned in section "Docker Registry"
 
+Change PORT of Running Container
+--------------------------------
+
+Switching port for Running Container, usefull if you have Java code connect to specific port and want to switch container.
+Example below for PORT: 15210 swtich to 2(two) different container
+
+Command: p-map
+
+        ~ $ p-map
+        Change port of running container
+        Command: p-map <container_name> <port_host:port_guest>
+
+        DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:21521 to:172.17.0.1:1521
+        DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:11521 to:172.17.0.2:1521
+
+        ~ $ p-map xe1 15210:1521
+        Change port of running container
+
+        sudo iptables -t nat -A DOCKER -p tcp --dport 15210 -j DNAT --to-destination 172.17.0.1:1521
+
+        DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:21521 to:172.17.0.1:1521
+        DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:11521 to:172.17.0.2:1521
+        DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:15210 to:172.17.0.1:1521 --
+
+        ~ $ p-map xe2 15210:1521
+        Change port of running container
+        Error: No such image or container: xe2
+
+        DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:21521 to:172.17.0.1:1521
+        DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:11521 to:172.17.0.2:1521
+        DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:15210 to:172.17.0.1:1521 --
+
+        ~ $ p-map xe3 15210:1521
+        Change port of running container
+
+        sudo iptables -t nat -D DOCKER -p tcp --dport 15210 -j DNAT --to-destination 172.17.0.1:1521
+        sudo iptables -t nat -A DOCKER -p tcp --dport 15210 -j DNAT --to-destination 172.17.0.2:1521
+
+        DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:21521 to:172.17.0.1:1521
+        DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:11521 to:172.17.0.2:1521
+        DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:15210 to:172.17.0.2:1521 --
+
 
 License: MIT
 ------------
