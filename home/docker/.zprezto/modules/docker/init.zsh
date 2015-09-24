@@ -13,7 +13,7 @@ alias  dri="docker run -itP" # Run interactive container, e.g., $dki base /bin/b
 alias  dsr='dkill && drm'    # Kill and Remove all containers
 alias  drv="docker run -itP -v /Users:/home" # Run with /Users volume as home
 alias  dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'" # Get container IP
-alias  dclean=docker rmi $(sudo docker images -f "dangling=true" -q)
+alias  dclean='docker rmi $(docker images -qf "dangling=true")' # remove dangling images
 
 dbl()    { docker build -t=$1 .; } # Dockerfile build, e.g., $dbu tcnksm/test 
 drm()    { docker rm   $(docker ps  -aq);  }   # Remove all containers
