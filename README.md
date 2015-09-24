@@ -8,7 +8,7 @@ Tools of the trade
 ------------------
 
   - tmux 2.1
-  - docker-compose 1.3.3
+  - docker-compose 1.4.2
   - zsh 5.0.8 + prezto (OMZ)
 
 
@@ -52,19 +52,20 @@ UnInstall
 Shortcuts
 ---------
 
-| alias | Commands                   |  Note                                 |
-|:-----:|----------------------------|---------------------------------------|
-|  di   | docker images              | Get images                            |
-|  dl   | docker ps -lq              | Get latest container ID               |
-|  dp   | docker ps                  | Get container process                 |
-|  dx   | docker exec -it            | Run specific app on running container |
-|  dpa  | docker ps -a               | Get all container process             | 
-|  dpq  | docker ps -aq              | Get all numric IDs container          |
-|  drd  | docker run -dP             | Run demonized                         | 
-|  dri  | docker run -itP            | Run interactive                       |
-|  dsr  | dkill && drm               | Kill all running container and rm it  | 
-|  drv  | docker run -itP -v         | Run and need parameter for volume     |
-|  dip  | docker inspect --format .. | Get container IP                      |
+| alias | Commands                     |  Note                                 |
+|:-----:|------------------------------|---------------------------------------|
+|  di   | docker images                | Get images                            |
+|  dl   | docker ps -lq                | Get latest container ID               |
+|  dp   | docker ps                    | Get container process                 |
+|  dx   | docker exec -it              | Run specific app on running container |
+|  dpa  | docker ps -a                 | Get all container process             | 
+|  dpq  | docker ps -aq                | Get all numric IDs container          |
+|  drd  | docker run -dP               | Run demonized                         | 
+|  dri  | docker run -itP              | Run interactive                       |
+|  dsr  | dkill && drm                 | Kill all running container and rm it  | 
+|  drv  | docker run -itP -v           | Run and need parameter for volume     |
+|  dip  | docker inspect --format ..   | Get container IP                      |
+| dclean| docker rmi $(docker images ..| Remove dangling images                |
 
 | func   | Commands                       |  Note                            |
 |:------:|--------------------------------|----------------------------------|
