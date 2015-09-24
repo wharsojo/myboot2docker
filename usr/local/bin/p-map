@@ -15,7 +15,7 @@ if [ ! -z "$1" -a "$1" != " " ] && [ ! -z "$2" -a "$2" != " " ]; then
              sudo iptables -t nat -A DOCKER -p tcp --dport $hostport -j DNAT --to-destination $IPAddress:$guestport
     fi
 else 
-    echo Command: p-map \<container_name\> \<port_host:port_guest\>
+    echo Command: p-map \<container_name\> \<host_port:guest_port\>
 fi
 echo
 sudo iptables -t nat -L -n | grep DNAT

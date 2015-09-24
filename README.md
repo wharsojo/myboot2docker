@@ -138,7 +138,7 @@ Command: p-map
 
         ~ $ p-map
         Change port of running container
-        Command: p-map <container_name> <port_host:port_guest>
+        Command: p-map <container_name> <host_port:guest_port>
 
         DNAT     tcp  --  0.0.0.0/0       0.0.0.0/0       tcp dpt:21521 to:172.17.0.1:1521
         DNAT     tcp  --  0.0.0.0/0       0.0.0.0/0       tcp dpt:11521 to:172.17.0.2:1521
