@@ -14,6 +14,7 @@ alias  dsr='dkill && drm'    # Kill and Remove all containers
 alias  drv="docker run -itP -v /Users:/home" # Run with /Users volume as home
 alias  dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'" # Get container IP
 alias  dclean='docker rmi $(docker images -qf "dangling=true")' # remove dangling images
+alias  dr-ls="curl -X GET http://localhub:5000/v1/search"
 
 dbl()    { docker build -t=$1 .; } # Dockerfile build, e.g., $dbu tcnksm/test 
 drm()    { docker rm   $(docker ps  -aq);  }   # Remove all containers
@@ -22,3 +23,7 @@ drme()   { docker rmi  $(docker images | grep "^<none>" | awk '{  print $3 }') }
 dstop()  { docker stop $(docker ps  -aq);  }   # Stop   all containers
 dkill()  { docker kill $(docker ps  -aq);  }   # Kill   all containers
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; } # Show all alias related docker
+dr-rm()  {
+    echo curl -X DELETE http://localhub:5000/v1/repositories/library/$1/  
+    curl -X DELETE http://localhub:5000/v1/repositories/library/$1/; 
+}

@@ -66,15 +66,18 @@ Shortcuts
 |  drv  | docker run -itP -v           | Run and need parameter for volume     |
 |  dip  | docker inspect --format ..   | Get container IP                      |
 | dclean| docker rmi $(docker images ..| Remove dangling images                |
+| dr-ls | curl -X GET http://localhub..| List images on private registry       |
 
-| func   | Commands                       |  Note                            |
-|:------:|--------------------------------|----------------------------------|
-| dbl()  | docker build -t=$1 .;          | Dockerfile build command         |
-| drm()  | docker rm $(docker ps  -aq);   | Remove all containers            |
-| drmi() | docker rmi $(docker ps  -aq);  | Remove all images                |
-| drme() | ...                            | Remove all empty name images     |
-| dkill()| docker kill $(docker ps  -aq); | Kill all container               | 
-| dstop()| docker stop $(docker ps  -aq); | Stop all container               | 
+| func   | Commands                       |  Note                              |
+|:------:|--------------------------------|------------------------------------|
+| dbl()  | docker build -t=$1 .;          | Dockerfile build command           |
+| drm()  | docker rm $(docker ps  -aq);   | Remove all containers              |
+| drmi() | docker rmi $(docker ps  -aq);  | Remove all images                  |
+| drme() | ...                            | Remove all empty name images       |
+| dkill()| docker kill $(docker ps  -aq); | Kill all container                 |
+| dstop()| docker stop $(docker ps  -aq); | Stop all container                 |
+| dr-rm()| docker curl -X DELETE http://lo| delete image from private registry |
+
 
 Docker Registry
 ---------------
@@ -106,7 +109,7 @@ List all container on private registry:
 
 Delete container library from private registry:
 
-        $ curl -X DELETE http://localhub:5000/v1/repositories/library/hello-world        
+        $ curl -X DELETE http://localhub:5000/v1/repositories/library/hello-world/
 
 Make private registry accessible to other computer
 --------------------------------------------------
