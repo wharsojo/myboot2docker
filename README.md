@@ -10,6 +10,7 @@ Tools of the trade
   - tmux 2.1
   - docker-compose 1.6.0
   - zsh 5.0.8 + prezto (OMZ)
+  - zsh completions for docker and docker-compose
 
 
 ![alt text](https://raw.githubusercontent.com/wharsojo/assets/master/myboot2docker/myboot2docker.gif "My Boot2Docker Demo")
