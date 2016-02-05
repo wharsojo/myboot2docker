@@ -8,7 +8,7 @@ Tools of the trade
 ------------------
 
   - tmux 2.1
-  - docker-compose 1.5.2
+  - docker-compose 1.6.0
   - zsh 5.0.8 + prezto (OMZ)
 
 
